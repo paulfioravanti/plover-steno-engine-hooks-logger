@@ -1,0 +1,4 @@
+[MAIN]
+ignored-modules=plover,plover.engine,plover.formatting,plover.steno,plover.steno_dictionary
+good-names=b,c,s
+
