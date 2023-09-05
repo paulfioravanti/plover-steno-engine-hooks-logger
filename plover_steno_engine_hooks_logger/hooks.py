@@ -12,9 +12,10 @@ from plover.steno_dictionary import StenoDictionaryCollection
 
 class StenoEngineHooksLogger:
     """
-    Plover entry point GUI Tool class to log the contents of steno engine
+    Contains implementation code for logging out contents of Plover steno engine
     hooks.
     """
+
     _HOOKS = [
         "add_translation",
         "config_changed",
