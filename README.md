@@ -1,9 +1,9 @@
 # Plover Steno Engine Hooks Logger
 
 [Plover][] uses [Engine Hooks][] to allow [plugins][] to listen to its
-[steno engine][] events. This [extension][] plugin simply connects into all the
-known Engine Hooks, and logs out the given parameters to the [Plover log][],
-which can be handy during Plover plugin development.
+[steno engine][] events. This hybrid [extension][]/[GUI Tool][] plugin simply
+connects into all the known Engine Hooks, and logs out the given parameters to
+the [Plover log][], which can be handy during Plover plugin development.
 
 ## Install
 
@@ -21,12 +21,25 @@ plover -s plover_plugins install .
 > of Plover. See the [Invoke Plover from the command line][] page for details on
 > how to create that reference.
 
+## Usage
+
+Since both the Extension and GUI Tool logging cover the same ground, you will
+likely only want to have one open at a single time (depending on what kind of
+plugin you are developing), otherwise the logs will get very noisy.
+
+### Enabling the Extension
+
 - After re-opening Plover, open the Configuration screen (either click the
   Configuration icon, or from the main Plover application menu, select
   `Preferences...`)
 - Open the Plugins tab
-- Check the box next to `plover_steno_engine_hooks_logger` to activate the
-  plugin
+- Check the box next to `plover_steno_engine_hooks_logger_extension` to activate
+  the plugin
+
+### Enabling the GUI Tool
+
+- After re-opening Plover, click the Steno Engine Hooks Logger button on the
+  Plover UI.
 
 ## Usage
 
@@ -45,6 +58,7 @@ you don't need to listen to in the `_HOOKS` list.
 [Engine Hooks]: https://plover.readthedocs.io/en/latest/api/engine.html#engine-hooks
 [extension]: https://plover.readthedocs.io/en/latest/plugin-dev/extensions.html
 [git]: https://git-scm.com/
+[GUI Tool]: https://plover.readthedocs.io/en/latest/plugin-dev/gui_tools.html
 [Invoke Plover from the command line]: https://github.com/openstenoproject/plover/wiki/Invoke-Plover-from-the-command-line
 [Plover]: https://www.openstenoproject.org/
 [Plover log]: https://plover.readthedocs.io/en/latest/api/log.html

@@ -2,3 +2,5 @@
 ignored-modules=plover,plover.engine,plover.formatting,plover.steno,plover.steno_dictionary
 good-names=b,c,s
 
+[MESSAGES CONTROL]
+disable=too-few-public-methods
