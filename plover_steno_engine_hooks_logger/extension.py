@@ -14,7 +14,6 @@ class StenoEngineHooksLoggerExtension(StenoEngineHooksLogger):
     """
 
     def __init__(self, engine: StenoEngine) -> None:
-        super().__init__()
         self._engine = engine
         self._log_marker = "[STENO ENGINE HOOK (EXTENSION)]"
 
