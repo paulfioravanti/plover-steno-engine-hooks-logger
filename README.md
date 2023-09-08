@@ -41,8 +41,6 @@ plugin you are developing), otherwise the logs will get very noisy.
 - After re-opening Plover, click the Steno Engine Hooks Logger button on the
   Plover UI.
 
-## Usage
-
 Once you have installed the plugin and restarted Plover, open up `plover.log`
 under Plover's configuration directory:
 
