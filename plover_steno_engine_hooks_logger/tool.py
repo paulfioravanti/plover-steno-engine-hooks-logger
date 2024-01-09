@@ -18,7 +18,7 @@ class StenoEngineHooksMetaClass(type(StenoEngineHooksLogger), type(Tool)):
 class StenoEngineHooksLoggerGUITool(
     Tool,
     StenoEngineHooksLogger,
-    metaclass= StenoEngineHooksMetaClass
+    metaclass=StenoEngineHooksMetaClass
 ):
     """
     Plover entry point GUI Tool class to log the contents of steno engine
