@@ -2,8 +2,15 @@
 Plover Steno Engine Hooks Logger - A Plover GUI Tool to log out the contents of
 steno engine hooks using Qt signals.
 """
-from abc import ABC, abstractmethod
-from typing import Any, Dict, List
+from abc import (
+    ABC,
+    abstractmethod
+)
+from typing import (
+    Any,
+    Dict,
+    List
+)
 
 from plover import log
 from plover.formatting import _Action
