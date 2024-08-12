@@ -11,15 +11,22 @@ This plugin is not currently planned to go in the [Plover Plugins Registry][],
 nor published to [PyPI][], since its only really useful for developers during
 development. Therefore, it can be installed using [git][]:
 
-```sh
+```console
 git clone git@github.com:paulfioravanti/plover-steno-engine-hooks-logger.git
 cd plover-steno-engine-hooks-logger
-plover -s plover_plugins install .
+plover --script plover_plugins install --editable .
 ```
 
 > Where `plover` in the command is a reference to your locally installed version
 > of Plover. See the [Invoke Plover from the command line][] page for details on
 > how to create that reference.
+
+When necessary, the plugin can be uninstalled via the command line with the
+following command:
+
+```console
+plover --script plover_plugins uninstall plover-steno-engine-hooks-logger
+```
 
 ## Usage
 
