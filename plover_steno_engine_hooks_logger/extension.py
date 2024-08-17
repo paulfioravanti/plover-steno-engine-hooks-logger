@@ -4,7 +4,7 @@ steno engine hooks.
 """
 from plover.engine import StenoEngine
 
-from .hooks import StenoEngineHooksLogger
+from .hooks_logger import StenoEngineHooksLogger
 
 
 class StenoEngineHooksLoggerExtension(StenoEngineHooksLogger):
