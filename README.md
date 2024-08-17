@@ -60,6 +60,26 @@ There, you should see entries there prefixed with `[STENO ENGINE HOOK]`.
 If you ever find the logs getting too noisy, then comment out any of the hooks
 you don't need to listen to in the `_HOOKS` list.
 
+## Development
+
+### Python Version
+
+Plover's Python environment currently uses version 3.9 (see Plover's
+[`workflow_context.yml`][] to confirm the current version).
+
+So, in order to avoid unexpected issues, use your runtime version manager to
+make sure your local development environment also uses Python 3.9.x.
+
+### Linting
+
+- [Pylint][] is used for code quality
+
+Run linting with the following command:
+
+```console
+pylint plover_steno_engine_hooks_logger
+```
+
 [Engine Hooks]: https://plover.readthedocs.io/en/latest/api/engine.html#engine-hooks
 [extension]: https://plover.readthedocs.io/en/latest/plugin-dev/extensions.html
 [git]: https://git-scm.com/
@@ -69,5 +89,7 @@ you don't need to listen to in the `_HOOKS` list.
 [Plover log]: https://plover.readthedocs.io/en/latest/api/log.html
 [Plover Plugins Registry]: https://github.com/openstenoproject/plover_plugins_registry
 [plugins]: https://plover.readthedocs.io/en/latest/plugins.html
+[Pylint]: https://github.com/pylint-dev/pylint
 [PyPI]: https://pypi.org/
 [steno engine]: https://plover.readthedocs.io/en/latest/api/engine.html
+[`workflow_context.yml`]: https://github.com/openstenoproject/plover/blob/master/.github/workflows/ci/workflow_context.yml
