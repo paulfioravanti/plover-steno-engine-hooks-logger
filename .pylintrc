@@ -1,5 +1,5 @@
 [MAIN]
-ignored-modules=plover,plover.engine,plover.formatting,plover.steno,plover.steno_dictionary
+ignored-modules=plover,plover.engine,plover.formatting,plover.gui_qt,plover.steno,plover.steno_dictionary
 good-names=b,c,s
 
 [MESSAGES CONTROL]
