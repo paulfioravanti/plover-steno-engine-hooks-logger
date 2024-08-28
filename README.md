@@ -93,7 +93,7 @@ development in running multiple test commands. You can run the following command
 from the project root directory:
 
 ```console
-just --working-directory . --justfile test/justfile
+just
 ```
 
 ### Deploying Changes
@@ -127,7 +127,7 @@ plover --script plover_plugins uninstall plover-q-and-a
 [Plover]: https://www.openstenoproject.org/
 [Plover log]: https://plover.readthedocs.io/en/latest/api/log.html
 [Plover Plugins Registry]: https://github.com/openstenoproject/plover_plugins_registry
-[plover_steno_engine_hooks project file]: https://github.com/paulfioravanti/dotfiles/blob/master/tmuxinator/plover_steno_engine_hooks.yml
+[plover_steno_engine_hooks_logger project file]: https://github.com/paulfioravanti/dotfiles/blob/master/tmuxinator/plover_steno_engine_hooks_logger.yml
 [plugins]: https://plover.readthedocs.io/en/latest/plugins.html
 [Pylint]: https://github.com/pylint-dev/pylint
 [PyPI]: https://pypi.org/
