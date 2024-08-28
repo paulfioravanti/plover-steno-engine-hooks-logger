@@ -109,7 +109,7 @@ When necessary, the plugin can be uninstalled via the command line with the
 following command:
 
 ```console
-plover --script plover_plugins uninstall plover-q-and-a
+plover --script plover_plugins uninstall plover-steno-engine-hooks-logger
 ```
 
 [Build Status image]: https://github.com/paulfioravanti/plover-steno-engine-hooks-logger/actions/workflows/ci.yml/badge.svg
