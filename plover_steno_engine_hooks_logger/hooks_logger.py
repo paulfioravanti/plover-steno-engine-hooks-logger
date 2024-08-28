@@ -23,8 +23,8 @@ class StenoEngineHooksLogger(ABC):
     Contains implementation code for logging out contents of Plover steno engine
     hooks.
     """
-
-    _HOOKS = [
+    _log_marker: str
+    _HOOKS: list[str] = [
         "add_translation",
         "config_changed",
         "configure",

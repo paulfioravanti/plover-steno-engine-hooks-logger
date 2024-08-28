@@ -8,7 +8,7 @@ from plover.gui_qt.tool import Tool
 from .hooks_logger import StenoEngineHooksLogger
 
 # REF: https://stackoverflow.com/a/28727066/567863
-class StenoEngineHooksMetaClass(type(StenoEngineHooksLogger), type(Tool)):
+class StenoEngineHooksMetaClass(type(StenoEngineHooksLogger), type(Tool)): # type: ignore
     """
     Metaclass to prevent the following error:
     `TypeError: metaclass conflict: the metaclass of a derived class must be a
@@ -16,7 +16,7 @@ class StenoEngineHooksMetaClass(type(StenoEngineHooksLogger), type(Tool)):
     """
 
 class StenoEngineHooksLoggerGUITool(
-    Tool,
+    Tool, # type: ignore
     StenoEngineHooksLogger,
     metaclass=StenoEngineHooksMetaClass
 ):
@@ -24,9 +24,10 @@ class StenoEngineHooksLoggerGUITool(
     Plover entry point GUI Tool class to log the contents of steno engine
     hooks.
     """
-    TITLE = "Steno Engine\nHooks Logger"
-    ICON = ''
-    ROLE = "Steno Engine Hooks Logger"
+    TITLE: str = "Steno Engine\nHooks Logger"
+    ICON: str = ''
+    ROLE: str = "Steno Engine Hooks Logger"
+    _log_marker: str
 
     def __init__(self, engine: StenoEngine) -> None:
         Tool.__init__(self, engine)

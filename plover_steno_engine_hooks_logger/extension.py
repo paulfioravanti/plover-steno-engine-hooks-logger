@@ -12,6 +12,8 @@ class StenoEngineHooksLoggerExtension(StenoEngineHooksLogger):
     Plover entry point extension class to log the contents of steno engine
     hooks.
     """
+    _engine: StenoEngine
+    _log_marker: str
 
     def __init__(self, engine: StenoEngine) -> None:
         self._engine = engine
