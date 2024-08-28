@@ -88,6 +88,14 @@ mypy plover_steno_engine_hooks_logger
 pylint plover_steno_engine_hooks_logger
 ```
 
+If you are a [`just`][] user, you may find the [`justfile`][] useful during
+development in running multiple test commands. You can run the following command
+from the project root directory:
+
+```console
+just --working-directory . --justfile test/justfile
+```
+
 ### Deploying Changes
 
 After making any code changes, install the plugin into Plover with the following
@@ -111,6 +119,8 @@ plover --script plover_plugins uninstall plover-q-and-a
 [git]: https://git-scm.com/
 [GUI Tool]: https://plover.readthedocs.io/en/latest/plugin-dev/gui_tools.html
 [Invoke Plover from the command line]: https://github.com/openstenoproject/plover/wiki/Invoke-Plover-from-the-command-line
+[`just`]: https://github.com/casey/just
+[`justfile`]: ./justfile
 [linting image]: https://img.shields.io/badge/linting-pylint-yellowgreen
 [linting url]: https://github.com/pylint-dev/pylint
 [Mypy]: https://github.com/python/mypy
