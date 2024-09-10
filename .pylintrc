@@ -1,6 +1,12 @@
 [MAIN]
-ignored-modules=plover,plover.engine,plover.formatting,plover.gui_qt,plover.steno,plover.steno_dictionary
-good-names=b,c,s
+ignored-modules =
+    plover
+    plover.engine
+    plover.formatting
+    plover.gui_qt.tool
+    plover.steno
+    plover.steno_dictionary
+good-names = b,c,s
 
 [MESSAGES CONTROL]
-disable=too-few-public-methods
+disable = too-few-public-methods
