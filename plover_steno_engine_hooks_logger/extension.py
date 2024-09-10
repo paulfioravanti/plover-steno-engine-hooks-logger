@@ -4,10 +4,10 @@ steno engine hooks.
 """
 from plover.engine import StenoEngine
 
-from .hooks_logger import StenoEngineHooksLogger
+from .steno_engine_hooks import Logger
 
 
-class StenoEngineHooksLoggerExtension(StenoEngineHooksLogger):
+class StenoEngineHooksLoggerExtension(Logger):
     """
     Plover entry point extension class to log the contents of steno engine
     hooks.

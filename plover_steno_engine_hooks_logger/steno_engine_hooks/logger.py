@@ -18,12 +18,11 @@ from plover.steno import Stroke
 from plover.steno_dictionary import StenoDictionaryCollection
 
 
-class StenoEngineHooksLogger(ABC):
+class Logger(ABC):
     """
     Contains implementation code for logging out contents of Plover steno engine
     hooks.
     """
-    _log_marker: str
     _HOOKS: list[str] = [
         "add_translation",
         "config_changed",
@@ -41,6 +40,7 @@ class StenoEngineHooksLogger(ABC):
         "suggestions",
         "translated",
     ]
+    _log_marker: str
 
     @abstractmethod
     def __init__(self) -> None:
