@@ -23,7 +23,7 @@ jobs:
           python-version: 3.9
 
       - name: Install Lint, Type Checking Dependencies
-        run: python -m pip install mypy pylint
+        run: python -m pip install --editable ".[test]"
 
       - name: Run Linter
         run: pylint plover_steno_engine_hooks_logger
