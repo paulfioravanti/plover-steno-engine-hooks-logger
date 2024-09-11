@@ -5,10 +5,10 @@ steno engine hooks using Qt signals.
 from plover.engine import StenoEngine
 from plover.gui_qt.tool import Tool
 
-from .logger import Logger
+from .steno_engine_hooks import Logger
 
 
-class GUITool(Tool, Logger, metaclass=_MetaClass): # type: ignore
+class StenoEngineHooksLoggerGUITool(Tool, Logger, metaclass=_MetaClass): # type: ignore
     """
     Plover entry point GUI Tool class to log the contents of steno engine
     hooks.
