@@ -10,9 +10,7 @@ the [Plover log][], which can be handy during Plover plugin development.
 
 ## Install
 
-This plugin is not currently planned to go in the [Plover Plugins Registry][],
-nor published to [PyPI][], since its only really useful for developers during
-development. Therefore, it can be installed using [git][]:
+### Pre-Plover Plugin Registry inclusion (Current)
 
 ```console
 git clone git@github.com:paulfioravanti/plover-steno-engine-hooks-logger.git
@@ -24,12 +22,31 @@ plover --script plover_plugins install --editable .
 > of Plover. See the [Invoke Plover from the command line][] page for details on
 > how to create that reference.
 
-When necessary, the plugin can be uninstalled via the command line with the
-following command:
+Then:
 
-```console
-plover --script plover_plugins uninstall plover-steno-engine-hooks-logger
-```
+1. When it finishes installing, restart Plover
+2. Open the Plover Configuration screen (either click the
+   Configuration icon, or from the main Plover application menu, select
+   `Preferences...`)
+3. Open the Plugins tab
+4. Check the box next to `plover_steno_engine_hooks` to activate the plugin
+5. Click the Steno Engine Hooks Logger button on the Plover UI to enable
+   UI-related logging.
+
+### Post-Plover Plugin Registry inclusion (Future)
+
+1. In the Plover application, open the Plugins Manager (either click the Plugins
+   Manager icon, or from the `Tools` menu, select `Plugins Manager`).
+2. From the list of plugins, find `plover-steno-engine-hooks`
+3. Click "Install/Update"
+4. When it finishes installing, restart Plover
+5. After re-opening Plover, open the Configuration screen (either click the
+   Configuration icon, or from the main Plover application menu, select
+   `Preferences...`)
+6. Open the Plugins tab
+7. Check the box next to `plover_steno_engine_hooks` to activate the plugin
+8. Click the Steno Engine Hooks Logger button on the Plover UI to enable
+   UI-related logging.
 
 ## Usage
 
@@ -37,33 +54,29 @@ Since both the Extension and GUI Tool logging cover the same ground, you will
 likely only want to have one open at a single time (depending on what kind of
 plugin you are developing), otherwise the logs will get very noisy.
 
-### Enabling the Extension
+To view the logs, open up `plover.log`, located under your [Plover
+configuration directory][]:
 
-- After re-opening Plover, open the Configuration screen (either click the
-  Configuration icon, or from the main Plover application menu, select
-  `Preferences...`)
-- Open the Plugins tab
-- Check the box next to `plover_steno_engine_hooks_logger_extension` to activate
-  the plugin
-
-### Enabling the GUI Tool
-
-- After re-opening Plover, click the Steno Engine Hooks Logger button on the
-  Plover UI.
-
-Once you have installed the plugin and restarted Plover, open up `plover.log`
-under Plover's configuration directory:
-
-- Windows: `C:\Users\<your username>\AppData\Local\plover\plover`
+- Windows: `C:\Users\<your username>\AppData\Local\plover`
 - macOS: `~/Library/Application Support/plover`
 - Linux: `~/.config/plover`
 
-There, you should see entries there prefixed with `[STENO ENGINE HOOK]`.
+There, you should see entries there prefixed with `[STENO ENGINE HOOK]` or
+`[STENO ENGINE HOOK (GUI)]`.
 
 If you ever find the logs getting too noisy, then comment out any of the hooks
-you don't need to listen to in the `_HOOKS` list.
+you don't need to listen to in the `_HOOKS` list under the `Logger` class.
 
 ## Development
+
+Clone from GitHub with [git][] and install test-related dependencies with
+[pip][]:
+
+```console
+git clone git@github.com:paulfioravanti/plover-steno-engine-hooks-logger.git
+cd plover-steno-engine-hooks-logger
+python -m pip install --editable ".[test]"
+```
 
 If you are a [Tmuxinator][] user, you may find my
 [plover_steno_engine_hooks_logger project file][] of reference.
@@ -78,14 +91,18 @@ make sure your local development environment also uses Python 3.9.x.
 
 ### Type Checking and Linting
 
-- [Mypy][] is used for static type checking
+Since the only parts of the plugin able to be tested are ones that do not rely
+directly on Plover, automated testing has not been possible. But, at least there
+are some code quality checks performed:
+
 - [Pylint][] is used for code quality
+- [Mypy][] is used for static type checking
 
 Run type checking and linting with the following commands:
 
 ```console
-mypy plover_steno_engine_hooks_logger
 pylint plover_steno_engine_hooks_logger
+mypy plover_steno_engine_hooks_logger
 ```
 
 If you are a [`just`][] user, you may find the [`justfile`][] useful during
@@ -124,9 +141,11 @@ plover --script plover_plugins uninstall plover-steno-engine-hooks-logger
 [linting image]: https://img.shields.io/badge/linting-pylint-yellowgreen
 [linting url]: https://github.com/pylint-dev/pylint
 [Mypy]: https://github.com/python/mypy
+[pip]: https://pip.pypa.io/en/stable/
 [Plover]: https://www.openstenoproject.org/
 [Plover log]: https://plover.readthedocs.io/en/latest/api/log.html
 [Plover Plugins Registry]: https://github.com/openstenoproject/plover_plugins_registry
+[Plover configuration directory]: https://plover.readthedocs.io/en/latest/api/oslayer_config.html#plover.oslayer.config.CONFIG_DIR
 [plover_steno_engine_hooks_logger project file]: https://github.com/paulfioravanti/dotfiles/blob/master/tmuxinator/plover_steno_engine_hooks_logger.yml
 [plugins]: https://plover.readthedocs.io/en/latest/plugins.html
 [Pylint]: https://github.com/pylint-dev/pylint
