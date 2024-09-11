@@ -6,10 +6,10 @@ disable = too-few-public-methods
 
 [TYPECHECK]
 ignored-modules =
-    plover
-    plover.engine
-    plover.formatting
-    plover.gui_qt
-    plover.steno
-    plover.steno_dictionary
+    plover,
+    plover.engine,
+    plover.formatting,
+    plover.gui_qt,
+    plover.steno,
+    plover.steno_dictionary,
     tool
