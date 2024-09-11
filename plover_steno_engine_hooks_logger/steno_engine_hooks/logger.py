@@ -51,7 +51,10 @@ class Logger(ABC):
         The Add Translation command was activated – open the Add Translation
         tool.
         """
-        log.info(f"{self._log_marker}: add_translation() called")
+        log.info(
+            f"{self._log_marker}\n"
+            "HOOK `add_translation()` called"
+        )
 
     def _config_changed(self, config: Dict[str, Any]) -> None:
         """
@@ -59,16 +62,19 @@ class Logger(ABC):
         `config` is a dictionary containing only the changed fields.
         """
         log.info(
-            f"{self._log_marker} "
-            "config_changed(config: Dict[str, any]) called"
+            f"{self._log_marker}\n"
+            "HOOK `config_changed(config: Dict[str, any])` called:\n"
+            f"    `config`: {config}"
         )
-        log.info(f"{self._log_marker}     config: {config}")
 
     def _configure(self) -> None:
         """
         The Configure command was activated – open the configuration window.
         """
-        log.info(f"{self._log_marker} configure() called")
+        log.info(
+            f"{self._log_marker}\n"
+            "HOOK `configure()` called"
+        )
 
     def _dictionaries_loaded(
         self,
@@ -79,24 +85,31 @@ class Logger(ABC):
         is changed or when the engine is reset.
         """
         log.info(
-            f"{self._log_marker} "
-            "dictionaries_loaded(dictionaries: StenoDictionaryCollection) "
-            "called"
+            f"{self._log_marker}\n"
+            "HOOK "
+            "`dictionaries_loaded(dictionaries: StenoDictionaryCollection)` "
+            "called:\n"
+            f"    `dictionaries`: {dictionaries}"
         )
-        log.info(f"{self._log_marker}     dictionaries: {dictionaries}")
 
     def _focus(self) -> None:
         """
         The Show command was activated – reopen Plover's main window and bring
         it to the front.
         """
-        log.info(f"{self._log_marker} focus() called")
+        log.info(
+            f"{self._log_marker}\n"
+            "HOOK `focus()` called"
+        )
 
     def _lookup(self) -> None:
         """
         The Lookup command was activated – open the Lookup tool.
         """
-        log.info(f"{self._log_marker} lookup() called")
+        log.info(
+            f"{self._log_marker}\n"
+            "HOOK `lookup()` called"
+        )
 
     def _machine_state_changed(
         self,
@@ -110,71 +123,94 @@ class Logger(ABC):
         `connected` or `disconnected`.
         """
         log.info(
-            f"{self._log_marker} "
-            "machine_state_changed(machine_type: str, machine_state: str) "
-            "called"
+            f"{self._log_marker}\n"
+            "HOOK "
+            "`machine_state_changed(machine_type: str, machine_state: str)` "
+            "called:\n"
+            f"    `machine_type`: {machine_type}\n"
+            f"    `machine_state`: {machine_state}"
         )
-        log.info(f"{self._log_marker}     machine_type: {machine_type}")
-        log.info(f"{self._log_marker}     machine_state: {machine_state}")
 
     def _output_changed(self, enabled: bool) -> None:
         """
         The user requested to either enable or disable steno output. `enabled`
         is `True` if output is enabled, `False` otherwise.
         """
-        log.info(f"{self._log_marker} output_changed(enabled: bool) called")
-        log.info(f"{self._log_marker}     enabled: {enabled}")
+        log.info(
+            f"{self._log_marker}\n"
+            "HOOK `output_changed(enabled: bool)` called:\n"
+            f"    `enabled`: {enabled}"
+        )
 
     def _quit(self) -> None:
         """
         The Quit command was activated – wrap up any pending tasks and quit
         Plover.
         """
-        log.info(f"{self._log_marker} quit() called")
+        log.info(
+            f"{self._log_marker}\n"
+            "HOOK `quit()` called"
+        )
 
     def _send_backspaces(self, b: int) -> None:
         """
         Plover just sent backspaces over keyboard output. `b` is the number of
         backspaces sent.
         """
-        log.info(f"{self._log_marker} send_backspaces(b: int) called")
-        log.info(f"{self._log_marker}     b: {b}")
+        log.info(
+            f"{self._log_marker}\n"
+            "HOOK `send_backspaces(b: int)` called:\n"
+            f"    `b`: {b}"
+        )
 
     def _send_key_combination(self, c: str) -> None:
         """
         Plover just sent a keyboard combination over keyboard output. `c` is a
         string representing the keyboard combination, for example `Alt_L(Tab)`
         """
-        log.info(f"{self._log_marker} send_key_combination(c: str) called")
-        log.info(f"{self._log_marker}     c: {c}")
+        log.info(
+            f"{self._log_marker}\n"
+            "HOOK `send_key_combination(c: str)` called:\n"
+            f"    `c`: {c}"
+        )
 
     def _send_string(self, s: str) -> None:
         """
         Plover just sent the string `s` over keyboard output.
         """
-        log.info(f"{self._log_marker} send_string(s: str) called")
-        log.info(f"{self._log_marker}     s: {s}")
+        log.info(
+            f"{self._log_marker}\n"
+            "HOOK `send_string(s: str)` called:\n"
+            f"    `s`: {s}"
+        )
 
     def _stroked(self, stroke: Stroke) -> None:
         """
         The user just sent a stroke.
         """
-        log.info(f"{self._log_marker} stroked(stroke: Stroke) called")
-        log.info(f"{self._log_marker}     stroke: {stroke}")
+        log.info(
+            f"{self._log_marker}\n"
+            "HOOK `stroked(stroke: Stroke)` called:\n"
+            f"    `stroke`: {stroke}"
+        )
 
     def _suggestions(self) -> None:
         """
         The Suggestions command was activated – open the Suggestions tool.
         """
-        log.info(f"{self._log_marker} suggestions() called")
+        log.info(
+            f"{self._log_marker}\n"
+            "HOOK `suggestions()` called"
+        )
 
     def _translated(self, old: List[_Action], new: List[_Action]) -> None:
         """
         A stroke was able to be translated.
         """
         log.info(
-            f"{self._log_marker} "
-            "translated(old: List[_Action], new: List[_Action])) called"
+            f"{self._log_marker}\n"
+            "HOOK "
+            "`translated(old: List[_Action], new: List[_Action])` called:\n"
+            f"    `old`: {old}\n"
+            f"    `new`: {new}"
         )
-        log.info(f"{self._log_marker}     old: {old}")
-        log.info(f"{self._log_marker}     new: {new}")
