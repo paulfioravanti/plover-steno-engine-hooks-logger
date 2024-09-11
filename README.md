@@ -2,7 +2,6 @@
 
 [![Build Status][Build Status image]][Build Status url] [![PyPI - Version][PyPI version image]][PyPI url] [![PyPI - Downloads][PyPI downloads image]][PyPI url] [![linting: pylint][linting image]][linting url]
 
-
 [Plover][] uses [Engine Hooks][] to allow [plugins][] to listen to its
 [steno engine][] events. This hybrid [extension][]/[GUI Tool][] plugin simply
 connects into all the known Engine Hooks, and logs out the given parameters to
