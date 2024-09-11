@@ -1,6 +1,6 @@
 # Plover Steno Engine Hooks Logger
 
-[![Build Status][Build Status image]][Build Status url] [![linting: pylint][linting image]][linting url]
+[![Build Status][Build Status image]][Build Status url] [![PyPI - Version][PyPI version image]][PyPI url] [![PyPI - Downloads][PyPI downloads image]][PyPI url] [![linting: pylint][linting image]][linting url]
 
 
 [Plover][] uses [Engine Hooks][] to allow [plugins][] to listen to its
@@ -150,6 +150,9 @@ plover --script plover_plugins uninstall plover-steno-engine-hooks-logger
 [plugins]: https://plover.readthedocs.io/en/latest/plugins.html
 [Pylint]: https://github.com/pylint-dev/pylint
 [PyPI]: https://pypi.org/
+[PyPI downloads image]: https://img.shields.io/pypi/dm/plover-steno-engine-hooks-logger
+[PyPI version image]: https://img.shields.io/pypi/v/plover-steno-engine-hooks-logger
+[PyPI url]: https://pypi.org/project/plover-steno-engine-hooks-logger/
 [steno engine]: https://plover.readthedocs.io/en/latest/api/engine.html
 [Tmuxinator]: https://github.com/tmuxinator/tmuxinator
 [`workflow_context.yml`]: https://github.com/openstenoproject/plover/blob/master/.github/workflows/ci/workflow_context.yml
