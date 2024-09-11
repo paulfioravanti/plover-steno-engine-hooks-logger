@@ -7,6 +7,7 @@ from plover.gui_qt.tool import Tool
 
 from .steno_engine_hooks import Logger
 
+
 # REF: https://stackoverflow.com/a/28727066/567863
 class _MetaClass(type(Logger), type(Tool)): # type: ignore
     """

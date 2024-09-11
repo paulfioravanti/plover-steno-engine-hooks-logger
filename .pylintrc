@@ -1,11 +1,7 @@
-[MAIN]
-ignored-modules =
-    plover
-    plover.engine
-    plover.formatting
-    plover.gui_qt.tool
-    plover.steno
-    plover.steno_dictionary
+[TYPECHECK]
+ignored-modules = plover,plover.engine,plover.formatting,plover.gui_qt.tool,plover.steno,plover.steno_dictionary
+
+[BASIC]
 good-names = b,c,s
 
 [MESSAGES CONTROL]

@@ -23,7 +23,9 @@ jobs:
           python-version: 3.9
 
       - name: Install Lint, Type Checking Dependencies
-        run: python -m pip install --editable ".[test]"
+        # NOTE: Due to issues with importing plover_build_utils in setup.py,
+        # it is not possible to run `python -m pip install ".[test]"` here.
+        run: python -m pip install mypy pylint
 
       - name: Run Linter
         run: pylint plover_steno_engine_hooks_logger
