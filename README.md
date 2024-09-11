@@ -60,8 +60,8 @@ configuration directory][]:
 - macOS: `~/Library/Application Support/plover`
 - Linux: `~/.config/plover`
 
-There, you should see entries there prefixed with `[STENO ENGINE HOOK]` or
-`[STENO ENGINE HOOK (GUI)]`.
+There, you should see entries there prefixed with `[STENO ENGINE HOOK
+(EXTENSION)]` or `[STENO ENGINE HOOK (GUI)]`.
 
 If you ever find the logs getting too noisy, then comment out any of the hooks
 you don't need to listen to in the `_HOOKS` list under the `Logger` class.
