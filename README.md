@@ -21,16 +21,20 @@ plover --script plover_plugins install --editable .
 > of Plover. See the [Invoke Plover from the command line][] page for details on
 > how to create that reference.
 
-Then:
+Restart Plover when it finishes installing. Then:
 
-1. When it finishes installing, restart Plover
-2. Open the Plover Configuration screen (either click the
+#### Extension Logging
+
+1. Open the Plover Configuration screen (either click the
    Configuration icon, or from the main Plover application menu, select
    `Preferences...`)
-3. Open the Plugins tab
-4. Check the box next to `plover_steno_engine_hooks` to activate the plugin
-5. Click the Steno Engine Hooks Logger button on the Plover UI to enable
-   UI-related logging.
+2. Open the Plugins tab
+3. Check the box next to `plover_steno_engine_hooks` to activate the extension
+
+#### GUI Tool Logging
+
+1. Click the Steno Engine Hooks Logger button on the Plover application to
+   enable GUI-related logging.
 
 ### Post-Plover Plugin Registry inclusion (Future)
 
@@ -39,22 +43,29 @@ Then:
 2. From the list of plugins, find `plover-steno-engine-hooks`
 3. Click "Install/Update"
 4. When it finishes installing, restart Plover
-5. After re-opening Plover, open the Configuration screen (either click the
+
+#### Extension Logging
+
+1. After re-opening Plover, open the Configuration screen (either click the
    Configuration icon, or from the main Plover application menu, select
    `Preferences...`)
-6. Open the Plugins tab
-7. Check the box next to `plover_steno_engine_hooks` to activate the plugin
-8. Click the Steno Engine Hooks Logger button on the Plover UI to enable
-   UI-related logging.
+2. Open the Plugins tab
+3. Check the box next to `plover_steno_engine_hooks` to activate the extension
+
+#### GUI Tool Logging
+
+1. Click the Steno Engine Hooks Logger button on the Plover application to
+   enable GUI-related logging.
 
 ## Usage
 
 Since both the Extension and GUI Tool logging cover the same ground, you will
-likely only want to have one open at a single time (depending on what kind of
-plugin you are developing), otherwise the logs will get very noisy.
+likely only want to use one at a single time (the extension, or the GUI Tool,
+depending on what kind of plugin you are developing), otherwise the logs will
+get very noisy.
 
-To view the logs, open up `plover.log`, located under your [Plover
-configuration directory][]:
+To view the logs, open up `plover.log`, located under your [Plover configuration
+directory][]:
 
 - Windows: `C:\Users\<your username>\AppData\Local\plover`
 - macOS: `~/Library/Application Support/plover`

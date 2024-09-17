@@ -46,6 +46,7 @@ class Logger(ABC):
     def __init__(self) -> None:
         self._log_marker = "[STENO ENGINE HOOK]"
 
+    # Callback
     def _add_translation(self) -> None:
         """
         The Add Translation command was activated – open the Add Translation
@@ -56,6 +57,7 @@ class Logger(ABC):
             "HOOK `add_translation()` called"
         )
 
+    # Callback
     def _config_changed(self, config: Dict[str, Any]) -> None:
         """
         The configuration was changed, or it was loaded for the first time.
@@ -67,6 +69,7 @@ class Logger(ABC):
             f"    `config`: {config}"
         )
 
+    # Callback
     def _configure(self) -> None:
         """
         The Configure command was activated – open the configuration window.
@@ -76,6 +79,7 @@ class Logger(ABC):
             "HOOK `configure()` called"
         )
 
+    # Callback
     def _dictionaries_loaded(
         self,
         dictionaries: StenoDictionaryCollection
@@ -92,6 +96,7 @@ class Logger(ABC):
             f"    `dictionaries`: {dictionaries}"
         )
 
+    # Callback
     def _focus(self) -> None:
         """
         The Show command was activated – reopen Plover's main window and bring
@@ -102,6 +107,7 @@ class Logger(ABC):
             "HOOK `focus()` called"
         )
 
+    # Callback
     def _lookup(self) -> None:
         """
         The Lookup command was activated – open the Lookup tool.
@@ -111,6 +117,7 @@ class Logger(ABC):
             "HOOK `lookup()` called"
         )
 
+    # Callback
     def _machine_state_changed(
         self,
         machine_type: str,
@@ -131,6 +138,7 @@ class Logger(ABC):
             f"    `machine_state`: {machine_state}"
         )
 
+    # Callback
     def _output_changed(self, enabled: bool) -> None:
         """
         The user requested to either enable or disable steno output. `enabled`
@@ -142,6 +150,7 @@ class Logger(ABC):
             f"    `enabled`: {enabled}"
         )
 
+    # Callback
     def _quit(self) -> None:
         """
         The Quit command was activated – wrap up any pending tasks and quit
@@ -152,6 +161,7 @@ class Logger(ABC):
             "HOOK `quit()` called"
         )
 
+    # Callback
     def _send_backspaces(self, b: int) -> None:
         """
         Plover just sent backspaces over keyboard output. `b` is the number of
@@ -163,6 +173,7 @@ class Logger(ABC):
             f"    `b`: {b}"
         )
 
+    # Callback
     def _send_key_combination(self, c: str) -> None:
         """
         Plover just sent a keyboard combination over keyboard output. `c` is a
@@ -174,6 +185,7 @@ class Logger(ABC):
             f"    `c`: {c}"
         )
 
+    # Callback
     def _send_string(self, s: str) -> None:
         """
         Plover just sent the string `s` over keyboard output.
@@ -184,6 +196,7 @@ class Logger(ABC):
             f"    `s`: {s}"
         )
 
+    # Callback
     def _stroked(self, stroke: Stroke) -> None:
         """
         The user just sent a stroke.
@@ -194,6 +207,7 @@ class Logger(ABC):
             f"    `stroke`: {stroke}"
         )
 
+    # Callback
     def _suggestions(self) -> None:
         """
         The Suggestions command was activated – open the Suggestions tool.
@@ -203,6 +217,7 @@ class Logger(ABC):
             "HOOK `suggestions()` called"
         )
 
+    # Callback
     def _translated(self, old: List[_Action], new: List[_Action]) -> None:
         """
         A stroke was able to be translated.
