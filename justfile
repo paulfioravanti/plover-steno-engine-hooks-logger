@@ -7,4 +7,3 @@ lint:
 
 typecheck:
   mypy plover_steno_engine_hooks_logger
-
