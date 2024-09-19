@@ -13,11 +13,10 @@ class StenoEngineHooksLoggerExtension(Logger):
     hooks.
     """
     _engine: StenoEngine
-    _log_marker: str
 
     def __init__(self, engine: StenoEngine) -> None:
         self._engine = engine
-        self._log_marker = "[STENO ENGINE HOOK (EXTENSION)]"
+        super().__init__(entry_point="EXTENSION")
 
     def start(self) -> None:
         """

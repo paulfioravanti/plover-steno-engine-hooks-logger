@@ -43,8 +43,8 @@ class Logger(ABC):
     _log_marker: str
 
     @abstractmethod
-    def __init__(self) -> None:
-        self._log_marker = "[STENO ENGINE HOOK]"
+    def __init__(self, entry_point: str) -> None:
+        self._log_marker = f"[STENO ENGINE HOOK ({entry_point})]"
 
     # Callback
     def _add_translation(self) -> None:

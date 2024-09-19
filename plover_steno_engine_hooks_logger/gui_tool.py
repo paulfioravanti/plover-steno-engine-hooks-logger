@@ -16,19 +16,18 @@ class _MetaClass(type(Logger), type(Tool)): # type: ignore
     (non-strict) subclass of the metaclasses of all its bases`
     """
 
-class StenoEngineHooksLoggerGUITool(Tool, Logger, metaclass=_MetaClass): # type: ignore
+class StenoEngineHooksLoggerGUITool(Logger, Tool, metaclass=_MetaClass): # type: ignore
     """
     Plover entry point GUI Tool class to log the contents of steno engine
     hooks.
     """
     TITLE: str = "Steno Engine\nHooks Logger"
-    ICON: str = ''
+    ICON: str = ""
     ROLE: str = "Steno Engine Hooks Logger"
-    _log_marker: str
 
     def __init__(self, engine: StenoEngine) -> None:
+        Logger.__init__(self, entry_point="GUI")
         Tool.__init__(self, engine)
-        self._log_marker = "[STENO ENGINE HOOK (GUI)]"
 
         for hook in self._HOOKS:
             engine.signal_connect(hook, getattr(self, f"_{hook}"))
