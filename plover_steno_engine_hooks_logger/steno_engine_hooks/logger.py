@@ -2,6 +2,7 @@
 Plover Steno Engine Hooks Logger - A Plover GUI Tool to log out the contents of
 steno engine hooks using Qt signals.
 """
+
 from abc import (
     ABC,
     abstractmethod
@@ -23,6 +24,7 @@ class Logger(ABC):
     Contains implementation code for logging out contents of Plover steno engine
     hooks.
     """
+
     _HOOKS: list[str] = [
         "add_translation",
         "config_changed",

@@ -2,6 +2,7 @@
 Plover Steno Engine Hooks Logger - A Plover extension to log out the contents of
 steno engine hooks.
 """
+
 from plover.engine import StenoEngine
 
 from .steno_engine_hooks import Logger
@@ -12,6 +13,7 @@ class StenoEngineHooksLoggerExtension(Logger):
     Plover entry point extension class to log the contents of steno engine
     hooks.
     """
+
     _engine: StenoEngine
 
     def __init__(self, engine: StenoEngine) -> None:

@@ -2,6 +2,7 @@
 Plover Steno Engine Hooks Logger - A Plover GUI Tool to log out the contents of
 steno engine hooks using Qt signals.
 """
+
 from plover.engine import StenoEngine
 from plover.gui_qt.tool import Tool
 
@@ -21,6 +22,7 @@ class StenoEngineHooksLoggerGUITool(Logger, Tool, metaclass=_MetaClass): # type:
     Plover entry point GUI Tool class to log the contents of steno engine
     hooks.
     """
+
     TITLE: str = "Steno Engine\nHooks Logger"
     ICON: str = ""
     ROLE: str = "Steno Engine Hooks Logger"
