@@ -9,42 +9,13 @@ the [Plover log][], which can be handy during Plover plugin development.
 
 ## Install
 
-### Pre-Plover Plugin Registry inclusion (Current)
-
-```console
-git clone git@github.com:paulfioravanti/plover-steno-engine-hooks-logger.git
-cd plover-steno-engine-hooks-logger
-plover --script plover_plugins install --editable .
-```
-
-> Where `plover` in the command is a reference to your locally installed version
-> of Plover. See the [Invoke Plover from the command line][] page for details on
-> how to create that reference.
-
-Restart Plover when it finishes installing. Then:
-
-#### Extension Logging
-
-1. Open the Plover Configuration screen (either click the
-   Configuration icon, or from the main Plover application menu, select
-   `Preferences...`)
-2. Open the Plugins tab
-3. Check the box next to `plover_steno_engine_hooks` to activate the extension
-
-#### GUI Tool Logging
-
-1. Click the Steno Engine Hooks Logger button on the Plover application to
-   enable GUI-related logging.
-
-### Post-Plover Plugin Registry inclusion (Future)
-
 1. In the Plover application, open the Plugins Manager (either click the Plugins
    Manager icon, or from the `Tools` menu, select `Plugins Manager`).
 2. From the list of plugins, find `plover-steno-engine-hooks`
 3. Click "Install/Update"
 4. When it finishes installing, restart Plover
 
-#### Extension Logging
+### Extension Logging
 
 1. After re-opening Plover, open the Configuration screen (either click the
    Configuration icon, or from the main Plover application menu, select
@@ -52,10 +23,10 @@ Restart Plover when it finishes installing. Then:
 2. Open the Plugins tab
 3. Check the box next to `plover_steno_engine_hooks` to activate the extension
 
-#### GUI Tool Logging
+### GUI Tool Logging
 
-1. Click the Steno Engine Hooks Logger button on the Plover application to
-   enable GUI-related logging.
+1. After re-opening Plover, click the Steno Engine Hooks Logger button on the
+   Plover application to enable GUI-related logging.
 
 ## Usage
 
