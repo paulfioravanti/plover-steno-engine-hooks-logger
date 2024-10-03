@@ -28,10 +28,10 @@ jobs:
         run: python -m pip install mypy pylint
 
       - name: Run Linter
-        run: pylint plover_steno_engine_hooks_logger
+        run: pylint src
 
       - name: Run Type Checker
-        run: mypy plover_steno_engine_hooks_logger
+        run: mypy src
 
       - name: Install Build
         # NOTE: Install of plover explicitly needed in order to run setup.py,

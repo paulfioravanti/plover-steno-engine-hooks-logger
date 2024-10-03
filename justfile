@@ -3,7 +3,7 @@
 default: lint typecheck
 
 lint:
-  pylint plover_steno_engine_hooks_logger
+  pylint src
 
 typecheck:
-  mypy plover_steno_engine_hooks_logger
+  mypy src
